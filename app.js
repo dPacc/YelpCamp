@@ -57,10 +57,14 @@ app.use("/campgrounds/:id/comments" ,commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
 // LOCALHOST
-app.listen(9090, function(err) {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log("Running on port 9090!");
-  }
+// app.listen(9090, function(err) {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log("Running on port 9090!");
+//   }
+// });
+
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
 });
