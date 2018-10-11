@@ -24,7 +24,6 @@ var app = express();
 // Configuration
 
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://yelpuser:abcd1234@ds249839.mlab.com:49839/deepyelpcamp");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
