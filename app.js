@@ -65,6 +65,6 @@ app.use("/campgrounds", campgroundRoutes);
 //   }
 // });
 
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The YelpCamp Server Has Started!");
 });
