@@ -14,7 +14,7 @@
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= showCamp.image %>">
                 <div class="caption-full">
-                    <h4 class="pull-right">$12.00/night</h4>
+                    <h4 class="pull-right">$<%= showCamp.price %>/night</h4>
                     <h4><a href="#"><%=showCamp.name%></a></h4>
                     <p><%=showCamp.description%></p>
                     <p><em>Submitted by <%=showCamp.author.username%></em></p>
@@ -41,6 +41,12 @@
                         </div>
                     </div>
                   <p><%= comment.text %></p>
+                  <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                      <a class="btn btn-xs btn-warning" href="/campgrounds/<%= showCamp._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                      <form id="delete-form" action="/campgrounds/<%= showCamp._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                      </form>
+                  <% } %>
                 <% }); %>
             </div>
         </div>
